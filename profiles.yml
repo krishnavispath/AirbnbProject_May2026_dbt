@@ -1,0 +1,27 @@
+AirbnbProj_dbt_SW:
+  outputs:
+    dev:
+      account: SGFPOCO-XU70549
+      database: AIRBNB
+      password: Training123456$
+      role: ACCOUNTADMIN
+      schema: DEV
+      threads: 1
+      type: snowflake
+      user: MAY2026LEARNING
+      warehouse: LARGE_WH
+  target: dev
+Airbnb_bq_proj:
+  outputs:
+    dev:
+      dataset: dbt_airbnb
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      keyfile: C:\Users\msk\Airbnb_bq\mysampleproject-491106-79b1b7c757d1.json
+      location: US
+      method: service-account
+      priority: interactive
+      project: mysampleproject-491106
+      threads: 1
+      type: bigquery
+  target: dev
