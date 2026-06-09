@@ -1,12 +1,15 @@
 models:
   - name: dim_listings_cleansed
+    description: "This table contains cleansed listing data for Airbnb listings."
     columns:
       - name: listing_id
+        description: "Unique identifier for each listing."
         data_tests:
           - not_null
           - unique
 
       - name: host_id
+        description: "Identifier for the host of each listing. References the dim_hosts_cleansed table."
         data_tests:
           - not_null
           - relationships:
@@ -15,10 +18,12 @@ models:
                 field: host_id
 
       - name: room_type
+        description: "Type of room available for booking."
         data_tests:
           - accepted_values:
               values: ['Entire home/apt', 'Private room', 'Shared room', 'Hotel room']
 
       - name: price
+        description: "Price per night for the listing."
         data_tests:
           - positive_values
